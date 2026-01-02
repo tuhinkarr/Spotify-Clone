@@ -20,7 +20,7 @@ function secondsToMinutesSeconds(seconds) {
 async function getSongs(folder) {
   currFolder = folder;
 
-  let res = await fetch("/songs/songs.json");
+  let res = await fetch("/Spotify-Clone/songs/songs.json");
   let data = await res.json();
 
   songs = data[folder] || [];
@@ -68,7 +68,7 @@ const playMusic = (track, pause = false) => {
 };
 
 async function displayAlbum() {
-  let res = await fetch("/songs/songs.json");
+  let res = await fetch("/Spotify-Clone/songs/songs.json");
   let data = await res.json();
 
   let cardContainer = document.querySelector(".cardContainer");
