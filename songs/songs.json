@@ -1,0 +1,13 @@
+{
+  "bright_mood": ["All I Want.mp3", "California Dreamin.mp3", "Can't Help Falling In Love.mp3", "Happy.mp3", "Hurt.mp3", "Killing In the Name.mp3", "The Turtles.mp3", "Walking On Sunshine.mp3"],
+  "angry_mood": ["Killing In the Name.mp3", "The Turtles.mp3", "Walking On Sunshine.mp3"],
+  "chill_mood": ["Killing In the Name.mp3", "The Turtles.mp3", "Walking On Sunshine.mp3"],
+  "dark_mood": ["All I Want.mp3", "California Dreamin.mp3", "Can't Help Falling In Love.mp3", "Happy.mp3"],
+  "drive": ["Killing In the Name.mp3", "The Turtles.mp3", "Walking On Sunshine.mp3"],
+  "funky_mood": ["All I Want.mp3", "Happy.mp3", "Hurt.mp3", "Killing In the Name.mp3", "The Turtles.mp3", "Walking On Sunshine.mp3"],
+  "happy_hits": ["Killing In the Name.mp3", "The Turtles.mp3", "Walking On Sunshine.mp3"],
+  "lofi_songs": ["Killing In the Name.mp3", "The Turtles.mp3", "Walking On Sunshine.mp3"],
+  "love_mood": ["All I Want.mp3", "California Dreamin.mp3", "Can't Help Falling In Love.mp3", "Happy.mp3"],
+  "uplifting_mood": ["All I Want.mp3", "California Dreamin.mp3", "Can't Help Falling In Love.mp3", "Happy.mp3"],
+  "workout": ["All I Want.mp3", "California Dreamin.mp3", "Can't Help Falling In Love.mp3", "Happy.mp3"]
+}
