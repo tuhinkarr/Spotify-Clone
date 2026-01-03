@@ -213,7 +213,7 @@ body {
   transition: opacity 0.3s, transform 0.3s;
   position: absolute;
   right: 20px;
-  bottom: 70px;
+  bottom: 110px;
 }
 .card:hover .play-btn {
   opacity: 1;
