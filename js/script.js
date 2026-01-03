@@ -151,6 +151,21 @@ async function main() {
     currentSong.volume = parseInt(e.target.value) / 100;
   });
 
+  // Add an event listener to mute the track
+  document.querySelector(".volume > img").addEventListener("click", (e) => { 
+    if (e.target.src.includes("/Spotify-Clone/svg/volume.svg")) {
+      // Switch to mute
+      e.target.src = e.target.src.replace("/Spotify-Clone/svg/volume.svg", "/Spotify-Clone/svg/mute.svg");
+      currentSong.volume = 0;
+      document.querySelector(".range").getElementsByTagName("input")[0].value = 0;
+    } else {
+      // Switch to volume
+      e.target.src = e.target.src.replace("/Spotify-Clone/svg/mute.svg", "/Spotify-Clone/svg/volume.svg");
+      currentSong.volume = 0.10;
+      document.querySelector(".range").getElementsByTagName("input")[0].value = 10;
+    }
+  });
+
   // Mobile responsiveness (Hamburger/Close)
   document.querySelector(".hamBurger").addEventListener("click", () => {
     document.querySelector(".left-container").style.left = "0";
