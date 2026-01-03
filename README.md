@@ -56,7 +56,7 @@ A fully functional music player experience including:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/tuhinkarr/Spotify-Clone.git
+https://github.com/tuhinkarr/Spotify-Clone.git
 ````
 
 ### 2. Navigate to the project folder
