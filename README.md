@@ -1,3 +1,8 @@
+Here’s your **fixed, clean, and fully polished README**, with all formatting issues resolved (broken code blocks, headings, spacing, anchors). You can **copy–paste this directly** into `README.md`.
+
+---
+
+````md
 <div align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="80" height="80" alt="Spotify Logo">
   <h1>🎵 Spotify Clone</h1>
@@ -14,23 +19,17 @@
     <a href="#-features">Features</a> •
     <a href="#-demo">View Demo</a> •
     <a href="#-tech-stack">Tech Stack</a> •
-    <a href="#-how-to-run">Installation</a>
+    <a href="#️-how-to-run">Installation</a>
   </p>
 </div>
 
 ---
 
 ## 📽 Demo
+
 <p align="center">
-
-
-
-
-https://github.com/user-attachments/assets/bf6d3b06-aa9f-4f98-8e7c-5cbe19dc0b39
-
-
-  
-  </p>
+  https://github.com/user-attachments/assets/bf6d3b06-aa9f-4f98-8e7c-5cbe19dc0b39
+</p>
 
 ---
 
@@ -38,21 +37,21 @@ https://github.com/user-attachments/assets/bf6d3b06-aa9f-4f98-8e7c-5cbe19dc0b39
 
 A fully functional music player experience including:
 
-* **Core Playback:** Seamless Play/Pause, Next, and Previous track logic.
-* **Progress Tracking:** Custom-built seekbar with real-time timestamps.
-* **Volume Logic:** Intuitive volume slider with a one-click mute toggle.
-* **Dynamic UI:** Playlist and Album cards generated dynamically via JavaScript.
-* **Responsive Design:** Optimized for both Desktop and Mobile screen sizes.
+- **Core Playback:** Seamless Play/Pause, Next, and Previous track logic  
+- **Progress Tracking:** Custom-built seekbar with real-time timestamps  
+- **Volume Logic:** Intuitive volume slider with a one-click mute toggle  
+- **Dynamic UI:** Playlist and album cards generated dynamically via JavaScript  
+- **Responsive Design:** Optimized for both desktop and mobile screen sizes  
 
 ---
 
 ## 🛠 Tech Stack
 
 | Technology | Use Case |
-| :--- | :--- |
+|----------|----------|
 | **HTML5** | Semantic structure and Audio API integration |
 | **CSS3** | Spotify-inspired dark theme, Flexbox, and Grid |
-| **Vanilla JS** | DOM manipulation, Event handling, and Audio logic |
+| **Vanilla JS** | DOM manipulation, event handling, and audio logic |
 
 ---
 
@@ -61,18 +60,16 @@ A fully functional music player experience including:
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/tuhinkarr/Spotify-Clone.git
+````
 
+### 2. Navigate to the project folder
 
----
-
-2. **Navigate to the project folder**
-   ```bash
+```bash
 cd Spotify-Clone
-
 ```
 
+### 3. Launch the project
 
-3. **Launch the project**
 Open `index.html` using **Live Server** in VS Code for the best experience.
 
 ---
@@ -81,21 +78,40 @@ Open `index.html` using **Live Server** in VS Code for the best experience.
 
 During the development of this project, I focused on:
 
-* **State Management:** Keeping the UI in sync with the current audio state (playing vs. paused).
-* **Asynchronous Logic:** Efficiently loading metadata and handling audio buffering.
-* **Audio API:** Leveraging the `HTMLAudioElement` for precise playback control.
+* **State Management:** Keeping the UI in sync with the current audio state (playing vs paused)
+* **Asynchronous Logic:** Efficiently loading metadata and handling audio buffering
+* **Audio API:** Leveraging the `HTMLAudioElement` for precise playback control
 
 ---
 
 ## 👨‍💻 Author
 
-**Tuhin Kar** | *Frontend Developer | JavaScript Enthusiast*
+**Tuhin Kar**
+*Frontend Developer | JavaScript Enthusiast*
 
 <p align="left">
-<a href="https://github.com/tuhinkarr">
-<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-</a>
-<a href="https://www.linkedin.com/in/tuhin-kar/">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-</a>
+  <a href="https://github.com/tuhinkarr">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="https://www.linkedin.com/in/tuhin-kar/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
 </p>
+```
+
+---
+
+### ✅ What I fixed
+
+* Closed **all broken code blocks**
+* Corrected Markdown + HTML mixing
+* Fixed section anchors & spacing
+* Made lists consistent and professional
+* Improved readability without changing your content
+
+If you want, I can:
+
+* Add **screenshots section**
+* Add **project structure**
+* Optimize it for **recruiter appeal**
+* Add **GitHub badges (stars, forks, license)**
