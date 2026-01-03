@@ -4,83 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify - Web Player: Music for everyone</title>
-    <link rel="stylesheet" href="/Spotify-Clone/css/style.css" />
-    <link rel="stylesheet" href="/Spotify-Clone/css/utility.css" />
-    <link rel="icon" type="image/x-icon" href="/Spotify-Clone/favicon.ico">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/utility.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
   <body>
     <div class="container">
       <div class="left-container">
         <div class="top-box">
-          <div class="close invert"><img src="/Spotify-Clone/svg/close.svg" alt="" /></div>
-          <img class="logo invert" src="/Spotify-Clone/svg/logo.svg" alt="Spotify logo" />
+          <div class="close invert"><img src="svg/close.svg" alt="" /></div>
+          <img class="logo invert" src="svg/logo.svg" alt="Spotify logo" />
           <ul class="home-search">
-            <li class="home fs-1"><img class="invert" src="/Spotify-Clone/svg/home.svg" alt="home" />Home</li>
-            <li class="search fs-1"><img class="invert-2" src="/Spotify-Clone/svg/search.svg" alt="search" />Search</li>
+            <li class="home fs-1"><img class="invert" src="svg/home.svg" alt="home" />Home</li>
+            <li class="search fs-1"><img class="invert-2" src="svg/search.svg" alt="search" />Search</li>
           </ul>
         </div>
         <div class="library">
           <div class="heading">
-            <img class="playlist invert-2" src="/Spotify-Clone/svg/playlist.svg" alt="playlist image" />
+            <img class="playlist invert-2" src="svg/playlist.svg" alt="playlist image" />
             <div class="fs-1">Your Library</div>
           </div>
           <div class="songList">
             <ul></ul>
           </div>
           <div class="footer">
-            <div>
-              <a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a>
-            </div>
-            <div>
-              <a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a>
-            </div>
-            <div>
-              <a href="https://www.spotify.com/jp/legal/privacy-policy/"><span>Privacy Policy</span></a>
-            </div>
-            <div>
-              <a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a>
-            </div>
-            <div>
-              <a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a>
-            </div>
-            <div>
-              <a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a>
-            </div>
+            <div><a href="https://www.spotify.com/legal/"><span>Legal</span></a></div>
+            <div><a href="https://www.spotify.com/privacy/"><span>Privacy Center</span></a></div>
+            <div><a href="https://www.spotify.com/legal/privacy-policy/"><span>Privacy Policy</span></a></div>
+            <div><a href="https://www.spotify.com/legal/cookies-policy/"><span>Cookies</span></a></div>
+            <div><a href="https://www.spotify.com/legal/privacy-policy/#s13"><span>About Ads</span></a></div>
+            <div><a href="https://www.spotify.com/accessibility"><span>Accessibility</span></a></div>
           </div>
         </div>
       </div>
       <div class="right-container">
         <div class="header">
           <div class="nav">
-            <img class="invert hamBurger" src="/Spotify-Clone/svg/hamburger.svg" alt="" />
-            <svg
-              class="nav-btn"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              color="#000000"
-              fill="none"
-              stroke="#141B34"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M17 4L8.66943 10.0405C6.44352 11.6545 6.44353 12.3455 8.66943 13.9595L17 20" />
-            </svg>
-            <svg
-              class="nav-btn"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              color="#000000"
-              fill="none"
-              stroke="#141B34"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M7 4L15.3306 10.0405C17.5565 11.6545 17.5565 12.3455 15.3306 13.9595L7 20" />
-            </svg>
+            <img class="invert hamBurger" src="svg/hamburger.svg" alt="" />
+            <svg class="nav-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4L8.66943 10.0405C6.44352 11.6545 6.44353 12.3455 8.66943 13.9595L17 20" /></svg>
+            <svg class="nav-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4L15.3306 10.0405C17.5565 11.6545 17.5565 12.3455 15.3306 13.9595L7 20" /></svg>
           </div>
           <div class="button">
             <button class="signUp">Sign up</button>
@@ -98,16 +60,14 @@
             <div class="aboveBar">
               <div class="songInfo"></div>
               <div class="song-btn">
-                <img id="previous" width="30px" src="/Spotify-Clone/svg/previous.svg" alt="" />
-
-                <img id="play" width="30px" src="/Spotify-Clone/svg/play.svg" alt="" />
-
-                <img id="next" width="30px" src="/Spotify-Clone/svg/next.svg" alt="" />
+                <img id="previous" width="30px" src="svg/previous.svg" alt="" />
+                <img id="play" width="30px" src="svg/play.svg" alt="" />
+                <img id="next" width="30px" src="svg/next.svg" alt="" />
               </div>
               <div class="timevol">
                 <div class="songTime"></div>
                 <div class="volume">
-                  <img width="23" src="/Spotify-Clone/svg/volume.svg" alt="" />
+                  <img width="23" src="svg/volume.svg" alt="" />
                   <div class="range"><input type="range" name="volume" /></div>
                 </div>
               </div>
@@ -116,6 +76,6 @@
         </div>
       </div>
     </div>
-    <script src="/Spotify-Clone/js/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
