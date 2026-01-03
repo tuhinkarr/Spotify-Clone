@@ -23,7 +23,9 @@
 ## 📽 Demo
 
 <p align="center">
+  
 https://github.com/user-attachments/assets/3250883c-d93a-4bf5-a524-9f6207c07f5e
+
 </p>
 
 ---
