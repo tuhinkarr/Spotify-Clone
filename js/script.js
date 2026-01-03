@@ -101,15 +101,34 @@ async function displayAlbum() {
   });
 }
 
+// --- Updated playMusic to ensure icons update correctly ---
+const playMusic = (track, pause = false) => {
+  currentSong.src = `/Spotify-Clone/songs/${currFolder}/` + track;
+
+  if (!pause) {
+    currentSong.play();
+    // Use querySelector here to ensure we find the play button icon
+    document.querySelector("#play").src = "/Spotify-Clone/svg/pause.svg";
+  }
+
+  document.querySelector(".songInfo").innerHTML = decodeURI(track);
+  document.querySelector(".songTime").innerHTML = "00:00 / 00:00";
+};
+
 async function main() {
-  // get the list of all the songs
+  // 1. DEFINE YOUR BUTTONS (Crucial: replace #ids with your actual HTML IDs/classes)
+  let play = document.querySelector("#play");
+  let previous = document.querySelector("#previous");
+  let next = document.querySelector("#next");
+
+  // Get the list of all the songs
   await getSongs("bright_mood");
   playMusic(songs[0], true);
 
   // Display all the albums on the page
   await displayAlbum();
 
-  // Attach event listner to play-btn, previous-btn and next-btn
+  // Play/Pause Event Listener
   play.addEventListener("click", () => {
     if (currentSong.paused) {
       currentSong.play();
@@ -120,71 +139,66 @@ async function main() {
     }
   });
 
-  // listen for timeupdate event
+  // Listen for timeupdate event
   currentSong.addEventListener("timeupdate", () => {
-    // console.log(currentSong.currentTime);
     document.querySelector(".songTime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`;
     document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
   });
 
-  // Add an eventlistner to the seekbar
+  // Seekbar Listener
   document.querySelector(".seekBar").addEventListener("click", (e) => {
     let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
     document.querySelector(".circle").style.left = percent + "%";
     currentSong.currentTime = (currentSong.duration * percent) / 100;
   });
 
-  // Add an enentlistner to the hamburger
+  // Hamburger & Close Listeners
   document.querySelector(".hamBurger").addEventListener("click", () => {
     document.querySelector(".left-container").style.left = "0";
   });
-
-  // Add an enentlistner to the close button
   document.querySelector(".close").addEventListener("click", () => {
     document.querySelector(".left-container").style.left = "-120%";
   });
 
-  // Add an event listener to previous
+  // --- FIXED PREVIOUS BUTTON ---
   previous.addEventListener("click", () => {
     currentSong.pause();
-
-    let index = songs.indexOf(decodeURIComponent(currentSong.src.split("/").pop()));
+    // Get filename, then decode %20 into spaces
+    let currentFileName = decodeURI(currentSong.src.split("/").pop());
+    let index = songs.indexOf(currentFileName);
 
     if (index - 1 >= 0) {
       playMusic(songs[index - 1]);
     }
   });
 
-  // Add an event listener to next
-  nnext.addEventListener("click", () => {
+  // --- FIXED NEXT BUTTON ---
+  next.addEventListener("click", () => {
     currentSong.pause();
-
-    let index = songs.indexOf(decodeURIComponent(currentSong.src.split("/").pop()));
+    // Get filename, then decode %20 into spaces
+    let currentFileName = decodeURI(currentSong.src.split("/").pop());
+    let index = songs.indexOf(currentFileName);
 
     if (index + 1 < songs.length) {
       playMusic(songs[index + 1]);
     }
   });
-  // Add an eventlistener to the volume
+
+  // Volume & Mute Listeners
   document
     .querySelector(".range")
     .getElementsByTagName("input")[0]
     .addEventListener("input", (e) => {
-      console.log("setting the volume to", e.target.value, "/100");
       currentSong.volume = parseInt(e.target.value) / 100;
-      if (currentSong.volume > 0) {
-        document.querySelector(".volume>img").src = document.querySelector(".volume>img").src.replace("/Spotify-Clone/svg/mute.svg", "/Spotify-Clone/svg/volume.svg");
-      }
     });
 
-  // Add an event listener to mute the track
   document.querySelector(".volume>img").addEventListener("click", (e) => {
-    if (e.target.src.includes("/Spotify-Clone/svg/volume.svg")) {
-      e.target.src = e.target.src.replace("/Spotify-Clone/svg/volume.svg", "/Spotify-Clone/svg/mute.svg");
+    if (e.target.src.includes("volume.svg")) {
+      e.target.src = e.target.src.replace("volume.svg", "mute.svg");
       currentSong.volume = 0;
       document.querySelector(".range").getElementsByTagName("input")[0].value = 0;
     } else {
-      e.target.src = e.target.src.replace("/Spotify-Clone/svg/mute.svg", "/Spotify-Clone/svg/volume.svg");
+      e.target.src = e.target.src.replace("mute.svg", "volume.svg");
       currentSong.volume = 0.1;
       document.querySelector(".range").getElementsByTagName("input")[0].value = 10;
     }
