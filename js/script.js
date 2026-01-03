@@ -32,7 +32,7 @@ async function getSongs(folder) {
     songUl.innerHTML += `
       <li>
         <div class="musicBox">
-          <img class="invert" src="/svg/music.svg" />
+          <img class="invert" src="/Spotify-Clone/svg/music.svg" />
           <div class="Info">
             <div>${song}</div>
             <div>Tuhin</div>
@@ -40,7 +40,7 @@ async function getSongs(folder) {
         </div>
         <div class="playNow">
           <span>Play now</span>
-          <span><img class="invert" src="/svg/play.svg" /></span>
+          <span><img class="invert" src="/Spotify-Clone/svg/play.svg" /></span>
         </div>
       </li>
     `;
@@ -56,16 +56,19 @@ async function getSongs(folder) {
 }
 
 
+
 const playMusic = (track, pause = false) => {
-  // let audio = new Audio("/songs/" + track);
-  currentSong.src = `/${currFolder}/` + track;
+  currentSong.src = `/Spotify-Clone/songs/${currFolder}/` + track;
+
   if (!pause) {
     currentSong.play();
-    play.src = "/svg/pause.svg";
+    play.src = "/Spotify-Clone/svg/pause.svg";
   }
+
   document.querySelector(".songInfo").innerHTML = decodeURI(track);
   document.querySelector(".songTime").innerHTML = "00:00 / 00:00";
 };
+
 
 async function displayAlbum() {
   let res = await fetch("/Spotify-Clone/songs/songs.json");
@@ -75,7 +78,7 @@ async function displayAlbum() {
   cardContainer.innerHTML = "";
 
   for (let folder in data) {
-    let info = await fetch(`/songs/${folder}/info.json`);
+    let info = await fetch(`/Spotify-Clone/songs/${folder}/info.json`);
     let meta = await info.json();
 
     cardContainer.innerHTML += `
@@ -86,7 +89,7 @@ async function displayAlbum() {
             <polygon points="32,25 32,55 55,40" fill="black" />
           </svg>
         </div>
-        <img src="/songs/${folder}/cover.jpg" />
+        <img src="/Spotify-Clone/songs/${folder}/cover.jpg" />
         <h2>${meta.title}</h2>
         <p>${meta.description}</p>
       </div>
@@ -102,6 +105,7 @@ async function displayAlbum() {
 }
 
 
+
 async function main() {
   // get the list of all the songs
   await getSongs("bright_mood");
@@ -112,14 +116,15 @@ async function main() {
 
   // Attach event listner to play-btn, previous-btn and next-btn
   play.addEventListener("click", () => {
-    if (currentSong.paused) {
-      currentSong.play();
-      play.src = "/svg/pause.svg";
-    } else {
-      currentSong.pause();
-      play.src = "/svg/play.svg";
-    }
-  });
+  if (currentSong.paused) {
+    currentSong.play();
+    play.src = "/Spotify-Clone/svg/pause.svg";
+  } else {
+    currentSong.pause();
+    play.src = "/Spotify-Clone/svg/play.svg";
+  }
+});
+
 
   // listen for timeupdate event
   currentSong.addEventListener("timeupdate", () => {
@@ -131,7 +136,7 @@ async function main() {
   // Add an eventlistner to the seekbar
   document.querySelector(".seekBar").addEventListener("click", (e) => {
     let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
-    document.querySelector("circle").style.left = percent + "%";
+    document.querySelector(".circle").style.left = percent + "%";
     currentSong.currentTime = (currentSong.duration * percent) / 100;
   });
 
@@ -174,18 +179,18 @@ async function main() {
       console.log("setting the volume to", e.target.value, "/100");
       currentSong.volume = parseInt(e.target.value) / 100;
       if (currentSong.volume > 0) {
-        document.querySelector(".volume>img").src = document.querySelector(".volume>img").src.replace("mute.svg", "volume.svg");
+        document.querySelector(".volume>img").src = document.querySelector(".volume>img").src.replace("/Spotify-Clone/svg/mute.svg", "/Spotify-Clone/svg/volume.svg");
       }
     });
 
   // Add an event listener to mute the track
   document.querySelector(".volume>img").addEventListener("click", (e) => {
-    if (e.target.src.includes("volume.svg")) {
-      e.target.src = e.target.src.replace("volume.svg", "mute.svg");
+    if (e.target.src.includes("/Spotify-Clone/svg/volume.svg")) {
+      e.target.src = e.target.src.replace("/Spotify-Clone/svg/volume.svg", "/Spotify-Clone/svg/mute.svg");
       currentSong.volume = 0;
       document.querySelector(".range").getElementsByTagName("input")[0].value = 0;
     } else {
-      e.target.src = e.target.src.replace("mute.svg", "volume.svg");
+      e.target.src = e.target.src.replace("/Spotify-Clone/svg/mute.svg", "/Spotify-Clone/svg/volume.svg");
       currentSong.volume = 0.1;
       document.querySelector(".range").getElementsByTagName("input")[0].value = 10;
     }
