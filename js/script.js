@@ -46,7 +46,7 @@ async function getSongs(folder) {
     `;
   }
 
-  Array.from(document.querySelectorAll(".songList li")).forEach(e => {
+  Array.from(document.querySelectorAll(".songList li")).forEach((e) => {
     e.addEventListener("click", () => {
       playMusic(e.querySelector(".Info div").innerText);
     });
@@ -54,8 +54,6 @@ async function getSongs(folder) {
 
   return songs;
 }
-
-
 
 const playMusic = (track, pause = false) => {
   currentSong.src = `/Spotify-Clone/songs/${currFolder}/` + track;
@@ -68,7 +66,6 @@ const playMusic = (track, pause = false) => {
   document.querySelector(".songInfo").innerHTML = decodeURI(track);
   document.querySelector(".songTime").innerHTML = "00:00 / 00:00";
 };
-
 
 async function displayAlbum() {
   let res = await fetch("/Spotify-Clone/songs/songs.json");
@@ -96,15 +93,13 @@ async function displayAlbum() {
     `;
   }
 
-  Array.from(document.querySelectorAll(".card")).forEach(card => {
+  Array.from(document.querySelectorAll(".card")).forEach((card) => {
     card.addEventListener("click", async () => {
       songs = await getSongs(card.dataset.folder);
       playMusic(songs[0]);
     });
   });
 }
-
-
 
 async function main() {
   // get the list of all the songs
@@ -116,15 +111,14 @@ async function main() {
 
   // Attach event listner to play-btn, previous-btn and next-btn
   play.addEventListener("click", () => {
-  if (currentSong.paused) {
-    currentSong.play();
-    play.src = "/Spotify-Clone/svg/pause.svg";
-  } else {
-    currentSong.pause();
-    play.src = "/Spotify-Clone/svg/play.svg";
-  }
-});
-
+    if (currentSong.paused) {
+      currentSong.play();
+      play.src = "/Spotify-Clone/svg/pause.svg";
+    } else {
+      currentSong.pause();
+      play.src = "/Spotify-Clone/svg/play.svg";
+    }
+  });
 
   // listen for timeupdate event
   currentSong.addEventListener("timeupdate", () => {
@@ -153,24 +147,24 @@ async function main() {
   // Add an event listener to previous
   previous.addEventListener("click", () => {
     currentSong.pause();
-    console.log("Previous clicked");
-    let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+
+    let index = songs.indexOf(decodeURIComponent(currentSong.src.split("/").pop()));
+
     if (index - 1 >= 0) {
       playMusic(songs[index - 1]);
     }
   });
 
   // Add an event listener to next
-  next.addEventListener("click", () => {
+  nnext.addEventListener("click", () => {
     currentSong.pause();
-    console.log("Next clicked");
 
-    let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+    let index = songs.indexOf(decodeURIComponent(currentSong.src.split("/").pop()));
+
     if (index + 1 < songs.length) {
       playMusic(songs[index + 1]);
     }
   });
-
   // Add an eventlistener to the volume
   document
     .querySelector(".range")
