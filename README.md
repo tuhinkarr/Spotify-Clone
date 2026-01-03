@@ -62,10 +62,10 @@ A fully functional music player experience including:
    ```bash
    git clone https://github.com/tuhinkarr/Spotify-Clone.git
 
-```
+
 
 2. **Navigate to the project folder**
-```bash
+   ```bash
 cd Spotify-Clone
 
 ```
